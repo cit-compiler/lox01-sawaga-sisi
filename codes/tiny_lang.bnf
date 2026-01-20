@@ -1,0 +1,18 @@
+program     ::= statement* ;
+
+statement   ::= identifier "=" expression ";" ;
+
+expression  ::= term ( ("+" | "-") term )* ;
+
+term        ::= factor ( ("*" | "/") factor )* ;
+
+factor      ::= number
+              | identifier
+              | "(" expression ")" ;
+
+identifier  ::= letter ( letter | digit )* ;
+
+number      ::= digit+ ;
+
+letter      ::= "a"…"z" | "A"…"Z" ;
+digit       ::= "0"…"9" ;

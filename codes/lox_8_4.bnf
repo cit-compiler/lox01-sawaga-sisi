@@ -1,0 +1,28 @@
+program        ::= token* EOF ;
+
+token          ::= keyword
+                 | identifier
+                 | number
+                 | string
+                 | symbol ;
+
+keyword        ::= "and" | "class" | "else" | "false" | "fun"
+                 | "for" | "if" | "nil" | "or"
+                 | "print" | "return" | "super" | "this"
+                 | "true" | "var" | "while" ;
+
+identifier     ::= letter ( letter | digit )* ;
+
+number         ::= digit+ ( "." digit+ )? ;
+
+string         ::= "\"" character* "\"" ;
+
+symbol         ::= "(" | ")" | "{" | "}"
+                 | "," | "." | "-" | "+"
+                 | ";" | "*" | "/"
+                 | "!" | "!=" | "=" | "=="
+                 | "<" | "<=" | ">" | ">=" ;
+
+letter         ::= "a"…"z" | "A"…"Z" | "_" ;
+digit          ::= "0"…"9" ;
+character      ::= any-character-except-quote-or-newline ;
